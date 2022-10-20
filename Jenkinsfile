@@ -15,8 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                bat 'echo %PATH%'
-                bat 'echo %M2_HOME%'
+                bat 'mvn install'
             }
         }
         stage('Test') {
