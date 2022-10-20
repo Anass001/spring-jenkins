@@ -5,7 +5,8 @@ pipeline {
         stage('Checkout Codebase'){
             steps {
                 echo 'polling..'
-                git 'https://github.com/Anass001/spring-jenkins'
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']],
+                    userRemoteConfigs: [[url: 'https://github.com/Anass001/spring-jenkins.git']]])
             }
         }
         stage('Build') {
