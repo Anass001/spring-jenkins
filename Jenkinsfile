@@ -15,10 +15,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                bat '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
+                bat 'echo %PATH%'
+                bat 'echo %M2_HOME%'
             }
         }
         stage('Test') {
