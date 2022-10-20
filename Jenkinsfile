@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                build 'spring-boot-pipeline'
+                sh './mvnw spring-boot:run'
             }
         }
         stage('Test') {
