@@ -28,7 +28,8 @@ pipeline {
             steps {
                 echo 'Deploying....'
 //                 bat 'mvn clean compile package'
-            deploy adapters: [tomcat9(credentialsId: '39484b5f-6890-49f2-8e3f-faccaf60a90d', path: '', url: 'http://localhost:5050/')], contextPath: 'SpringJenkinsPipeline', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: '39484b5f-6890-49f2-8e3f-faccaf60a90d', path: '', url: 'http://localhost:5050/')], contextPath: 'SpringJenkinsPipeline', war: '**/*.war'
+            }
         }
     }
 }
