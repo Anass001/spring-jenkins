@@ -15,7 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                bat 'mvn install'
+                bat 'mvn clean compile'
             }
         }
         stage('Test') {
@@ -27,8 +27,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-//                 bat 'mvn clean compile package'
-                deploy adapters: [tomcat9(credentialsId: '39484b5f-6890-49f2-8e3f-faccaf60a90d', path: '', url: 'http://localhost:5050/')], contextPath: 'SpringJenkinsPipeline', war: '**/*.jar'
+                bat 'mvn package'
+                deploy adapters: [tomcat9(credentialsId: '39484b5f-6890-49f2-8e3f-faccaf60a90d', path: '', url: 'http://localhost:5050/')], contextPath: 'SpringJenkinsPipeline', war: '**/*.war'
             }
         }
     }
