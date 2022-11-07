@@ -11,6 +11,6 @@ public class MyController {
 
     @GetMapping("/greeting")
     public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return "Hello Mr. " + name;
+        return "Hello Mr." + name;
     }
 }
