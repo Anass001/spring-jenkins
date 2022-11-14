@@ -10,6 +10,6 @@ import java.util.concurrent.atomic.AtomicLong;
 public class MyController {
     @GetMapping("/greeting")
     public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return "Hello My name is " + name;
+        return "Hello My name is mr. " + name;
     }
 }
